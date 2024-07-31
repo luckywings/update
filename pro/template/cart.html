@@ -1,0 +1,263 @@
+
+{% load static %}
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>pillloMart</title>
+    <link rel="icon" href="{% static 'img/favicon.png'%} ">
+    <!-- Bootstrap CSS -->
+    <link rel= "stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <!-- animate CSS -->
+    <link rel= "stylesheet" href="{% static 'css/animate.css'%}">
+    <!-- owl carousel CSS -->
+    <link rel= "stylesheet" href="{% static 'css/owl-carousel.css'%}">
+    <!-- font awesome CSS -->
+    <link rel= "stylesheet" href="{% static 'css/all.css'%}">
+    <!-- flaticon CSS -->
+    <link rel= "stylesheet" href="{% static 'css/flaticon.css'%}">
+    <link rel= "stylesheet" href="{% static 'css/themify-icons.css'%}">
+    <!-- font awesome CSS -->
+    <link rel= "stylesheet" href="{% static 'css/magnific-popup.css'%}">
+    <!-- swiper CSS -->
+    <link rel= "stylesheet" href="{% static 'css/slick.css'%}">
+    <!-- style CSS -->
+    <link rel= "stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                      <a class="navbar-brand" href="{%  url 'index' %}"> <img src="{% static 'img/logo.png'%}" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="menu_icon"><i class="fas fa-bars"></i></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                  <a class="nav-link" href="{%  url 'index' %}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{%  url 'about' %}">about</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        product
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                      <a class="dropdown-item" href="{% url 'product_list'%}"> product list</a>
+                                      <a class="dropdown-item" href="{% url 'single_product'%}">product details</a>
+                                      
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        pages
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                      <a class="dropdown-item" href="{% url 'login'%}"> 
+                                            login
+                                            
+                                        </a>
+                                        <a class="dropdown-item" href="{% url 'checkout'%}">product checkout</a>
+                                        <a class="dropdown-item" href="{% url 'cart'%}">shopping cart</a>
+                                      
+                                    </div>
+                                </li>
+                                
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        blog
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                      <a class="dropdown-item" href="{% url 'blog'%}"> celebrations</a>
+                                     
+                                    </div>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact'%}">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="hearer_icon d-flex align-items-center">
+                            
+                            <div class="dropdown cart">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="flaticon-shopping-cart-black-shape"></i>
+                                </a>
+                                <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="single_product">
+    
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+       
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb part start-->
+    <section class="breadcrumb_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner">
+                        <h2>cart list</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb part end-->
+
+  <!--================Cart Area =================-->
+  <section class="cart_area section_padding">
+    <div class="container">
+      <div class="cart_inner">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for a in cart %}
+              <tr>
+                <td>
+                  {{a.product}}
+                </td>
+                <td>
+                  {{a.quantity}}
+                </td>
+                <td>
+                  {{a.product.price}}
+                </td>
+                <td>
+                  <a href="{% url 'remove_from_cart' a.id %}"> <button type="submit" class="btn btn-danger">Delete</button></a>
+                </td>
+                {% empty %}
+                <p>Your cart is empty.</p>
+                </tr>
+                {% endfor %}
+             
+            </div>
+              <tr class="bottom_button">
+                <td>
+                  <a class="btn_1" href="{%  url 'product_list'%}">Update Cart</a>
+                </td>
+                <td></td>
+                <td></td>
+               
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>
+                  <h5>Subtotal</h5>
+                </td>
+                <td>
+                  <h5>RS:{{ total_price }}</h5>
+                </td>
+              </tr>
+             
+                  
+                  
+                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="checkout_btn_inner float-right">
+            <a class="btn_1" href="/product_list/">Continue Shopping</a>
+            <a class="btn_1 checkout_btn_1" href="/checkout/">Proceed to checkout</a>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!--================End Cart Area =================-->
+    <!--::footer_part start::-->
+    <footer class="footer_part">
+        <div class="footer_iner section_bg">
+            <div class="container">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-lg-8">
+                      <div class="footer_menu">
+                        <div class="footer_logo">
+                            <a href="{%  url 'index' %}"><img src="{% static 'img/logo.png'%}" alt="#"></a>
+                        </div>
+                        <div class="footer_menu_item">
+                            <a href="{%  url 'index' %}">Home</a>
+                            <a href="{%  url 'about' %}">About</a>
+                            <a href="{%  url 'product_list'%}">Products</a>
+                            <a href="#">Pages</a>
+                            <a href="{% url 'blog'%}">Blog</a>
+                            <a href="{% url 'contact'%}">Contact</a>
+                        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="social_icon">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </footer>
+    <!--::footer_part end::-->
+ <!-- jquery plugins here-->
+ <script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+ <!-- popper js -->
+ <script src="{% static 'js/popper.min.js' %}"></script>
+ <!-- bootstrap js -->
+ <script src="{% static 'js/bootstrap.min.js' %}"></script>
+ <!-- magnific popup js -->
+ <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+ <!-- carousel js -->
+ <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+ <script src="{% static 'js/jquery.nice-select.min.js'%}"></script>
+ <!-- slick js -->
+ <script src="{% static 'js/slick.min.js'%}"></script>
+ <script src="{% static 'js/jquery.counterup.min.js'%}"></script>
+ <script src="{% static 'js/waypoints.min.js'%}"></script>
+ <script src="{% static 'js/contact.js'%}"></script>
+ <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+ <script src="{% static 'js/jquery.form.js' %}"></script>
+ <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+ <script src="{% static 'js/mail-script.js' %}"></script>
+ <!-- custom js -->
+ <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
